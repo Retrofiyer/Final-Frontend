@@ -2,6 +2,8 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../styles/dashboard.css";
 
+const URL_USER=import.meta.env.VITE_API_URL_USER
+
 const Dashboard = () => {
   const navigate = useNavigate();
 
@@ -13,7 +15,7 @@ const Dashboard = () => {
         return navigate("/");
       }
       await axios.post(
-        "http://localhost:3004/auth/logout",
+        `${URL_USER}:3004/auth/logout`,
         {},
         {
           headers: { Authorization: `Bearer ${token}` },
