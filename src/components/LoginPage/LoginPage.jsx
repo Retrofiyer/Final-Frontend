@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 
-import "../styles/login.css";
+import "./login.css";
 
 const URL_USER=import.meta.env.VITE_API_URL_USER
 
