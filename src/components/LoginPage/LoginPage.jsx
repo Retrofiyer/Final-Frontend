@@ -3,7 +3,9 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 
-import "../styles/login.css";
+import "./login.css";
+
+const URL_USER=import.meta.env.VITE_API_URL_USER
 
 const LoginPage = () => {
   const [formData, setFormData] = useState({ idVolunteer: "", ci: "" });
@@ -36,7 +38,7 @@ const LoginPage = () => {
 
     try {
       const response = await axios.post(
-        "ec2-23-20-244-214.compute-1.amazonaws.com/auth/login",
+        `${URL_USER}:3000/auth/login`,
         formData,
         { withCredentials: true }
       );
