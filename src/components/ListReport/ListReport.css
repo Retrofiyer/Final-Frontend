@@ -1,0 +1,18 @@
+.container {
+    max-width: 900px;
+  }
+  
+  .table {
+    text-align: center;
+  }
+  
+  thead {
+    background-color: #343a40;
+    color: white;
+  }
+  
+  button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }  
