@@ -15,8 +15,7 @@ import ListReports from "./pages/ListReports";
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/login" element={<LoginPage />} />
+      <Route path="/" element={<LoginPage />} />
       <Route path="/dashboard" element={<ProtectedRoute element={<Dashboard />} />} />
       <Route path="/users" element={<ProtectedRoute element={<UserList />} />} />
       <Route path="/generate" element={<ProtectedRoute element={<ReportGenerate />} />} />

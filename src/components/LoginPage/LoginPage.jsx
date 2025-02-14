@@ -1,11 +1,12 @@
 import { FaUser, FaLock } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { jwtDecode } from "jwt-decode";
 import { useState } from "react";
 import axios from "axios";
 
 import "./login.css";
 
-const URL_USER=import.meta.env.VITE_API_URL_USER
+const URL_USER = import.meta.env.VITE_API_URL_USER;
 
 const LoginPage = () => {
   const [formData, setFormData] = useState({ idVolunteer: "", ci: "" });
@@ -43,7 +44,10 @@ const LoginPage = () => {
         { withCredentials: true }
       );
 
-      localStorage.setItem("token", response.data.token);
+      const token = response.data.token;
+
+      localStorage.setItem("token", token);
+
       navigate("/dashboard");
     } catch (err) {
       setErrorMessage("Incorrect credentials. Please try again.");
@@ -82,7 +86,9 @@ const LoginPage = () => {
           </div>
           {errors.ci && <p className="error">{errors.ci}</p>}
 
-          <button type="submit" className="btn btn-danger w-100">Login</button>
+          <button type="submit" className="btn btn-danger w-100">
+            Login
+          </button>
         </form>
       </div>
     </div>
